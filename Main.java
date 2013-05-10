@@ -4,6 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
+//Lead Programmer: Garret Sampel
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -58,12 +59,11 @@ public class Main extends IterativeRobot {
         p.p(3, o + "Watchdog enabled");
         //according to the world, we need safety...
         //I disagree, I shall devide by zero and spill coffee in
-        //data centers all I want.
+        //data centers all I want. (JOKING)
     }
 
     public void autonomousPeriodic() {
         /*GET RID OF THIS BEFORE COMPETITION!!!*/
-        // Brian told me to say: Winston waz here
             elevateTalon.set(1.0);
             Timer.delay(3.4);
             elevateTalon.set(0.0);
@@ -77,7 +77,7 @@ public class Main extends IterativeRobot {
                 kicker.set(0);
                 //write this later.
         }
-        launchWheel1.set(0.00); //safety off
+        launchWheel1.set(0.00); //safety shutoff
     }
 
     public void teleopPeriodic() {
@@ -88,7 +88,7 @@ public class Main extends IterativeRobot {
             update();
             launcher();
             climb();
-            //cam(); //we are not using a camera axis frame, leaving hte code for next year
+            //cam(); //we are not using a camera axis frame, leaving the code for next year
             extend();
             kick();
             elevator();
@@ -123,9 +123,9 @@ public class Main extends IterativeRobot {
     public void lift() {
         if (leftStick.getRawButton(11) == true) {//if the up button is pressed
             lifter.set(1.0);//run the motor at half speed
-            p.p(5, "Lifter: down");//and tell the user hte motor is running
+            p.p(5, "Lifter: down");//and tell the user the motor is running
         }
-        else if(leftStick.getRawButton(10) == true) {//if hte down button is pressed
+        else if(leftStick.getRawButton(10) == true) {//if the down button is pressed
             lifter.set(-1.0);//run the motor at half speed backwards
             p.p(5, "Lifter: up");//and tell the user that its running
         }
@@ -151,7 +151,7 @@ public class Main extends IterativeRobot {
             } else {
             }
         } else if (leftStick.getRawButton(2) == true) { //if the bottom button is pressed
-            if (throttleVal >= -1.0000000) {//and it is lmore than or equal to -1
+            if (throttleVal >= -1.0000000) {//and it is more than or equal to -1
                 throttleVal = throttleVal - 0.0100000; //decrease my 0.01 to the throttle
             } else {
             }
@@ -170,7 +170,7 @@ public class Main extends IterativeRobot {
             } else {
             }
         } else if (rightStick.getRawButton(2) == true) { //if the bottom button is pressed
-            if (throttleVal2 >= -1.0000000) {//and it is lmore than or equal to -1
+            if (throttleVal2 >= -1.0000000) {//and it is more than or equal to -1
                 throttleVal2 = throttleVal2 - 0.0100000; //decrease my 0.01 to the throttle
             } else {
             }

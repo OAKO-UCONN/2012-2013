@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+//Lead Programmer: Garret Sampel
 
 package edu.wpi.first.wpilibj.templates;
 
